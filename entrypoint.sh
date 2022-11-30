@@ -45,11 +45,6 @@ checkIfErr
 ls -al /gitbook/_book
 checkIfErr
 cp -rf /gitbook/_book $BOOK_DIR/
-cp $BOOK_DIR/SUMMARY.md $BOOK_DIR/README.md
-rm -rf $BOOK_DIR/publish.sh
-rm -rf $BOOK_DIR/Gruntfile.js
-rm -rf $BOOK_DIR/yarn.lock
-rm -rf $BOOK_DIR/yarn-error.log
 
 echo '[INFO] Finished to build Gitbook static files.'
 ls -al
@@ -75,6 +70,13 @@ cp -rf $GH_PAGES_FOLDER/.git ../dot_git_temp
 rm -rf $GH_PAGES_FOLDER
 mkdir -p $GH_PAGES_FOLDER
 cp -rf ../dot_git_temp $GH_PAGES_FOLDER/.git
+rm -rf $OUTPUT_DIR/README.md
+cp $OUTPUT_DIR/SUMMARY.md $OUTPUT_DIR/README.md
+rm -rf $OUTPUT_DIR/publish.sh
+rm -rf $OUTPUT_DIR/Gruntfile.js
+rm -rf $OUTPUT_DIR/yarn.lock
+rm -rf $OUTPUT_DIR/yarn-error.log
+
 cp -rf $OUTPUT_DIR/* $GH_PAGES_FOLDER/
 cd $GH_PAGES_FOLDER
 ls -al
