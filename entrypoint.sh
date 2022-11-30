@@ -45,6 +45,12 @@ checkIfErr
 ls -al /gitbook/_book
 checkIfErr
 cp -rf /gitbook/_book $BOOK_DIR/
+cp $BOOK_DIR/SUMMARY.md $BOOK_DIR/README.md
+rm -rf $BOOK_DIR/publish.sh
+rm -rf $BOOK_DIR/Gruntfile.js
+rm -rf $BOOK_DIR/yarn.lock
+rm -rf $BOOK_DIR/yarn-error.log
+
 echo '[INFO] Finished to build Gitbook static files.'
 ls -al
 
